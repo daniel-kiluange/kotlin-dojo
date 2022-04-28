@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="service.DiscountCalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-28T19:21:23" hostname="DESKTOP-M6OBUEC" time="0.059">
+  <properties/>
+  <testcase name="flat percent discount test1()" classname="service.DiscountCalculatorTest" time="0.059"/>
+  <system-out><![CDATA[15.00
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -2,13 +2,16 @@ package service
 
 import DiscountType
 import data.Product
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 internal class DiscountCalculatorTest {
 
     @Test
-    fun `flat percent discount test1`() {
+    fun `flat percent discount test1`() = runBlocking{
         val product = Product(1000, DiscountType.FLAT_PERCENT, 10)
         val calculator = DiscountCalculator()
         val value = calculator.applyDiscount(product)
@@ -17,7 +20,7 @@ internal class DiscountCalculatorTest {
     }
 
     @Test
-    fun `flat percent discount test2`() {
+    fun `flat percent discount test2`() = runBlocking{
         val product = Product(997, DiscountType.FLAT_PERCENT, 10)
         val calculator = DiscountCalculator()
         val value = calculator.applyDiscount(product)
@@ -25,7 +28,7 @@ internal class DiscountCalculatorTest {
     }
 
     @Test
-    fun `flat percent discount test3`() {
+    fun `flat percent discount test3`() = runBlocking{
         val product = Product(997, DiscountType.FLAT_PERCENT, 4)
         val calculator = DiscountCalculator()
         val value = calculator.applyDiscount(product)
@@ -34,7 +37,7 @@ internal class DiscountCalculatorTest {
     }
 
     @Test
-    fun `flat percent discount test4`() {
+    fun `flat percent discount test4`() = runBlocking{
         val product = Product(997, DiscountType.FLAT_PERCENT, 5)
         val calculator = DiscountCalculator()
         val value = calculator.applyDiscount(product)
@@ -42,7 +45,7 @@ internal class DiscountCalculatorTest {
     }
 
     @Test
-    fun `quantity discount test1`() {
+    fun `quantity discount test1`() = runBlocking{
         val product = Product(1000, DiscountType.QUANTITY, 10)
         val calculator = DiscountCalculator()
         val value = calculator.applyDiscount(product)
@@ -50,7 +53,7 @@ internal class DiscountCalculatorTest {
     }
 
     @Test
-    fun `quantity discount test2`() {
+    fun `quantity discount test2`() = runBlocking{
         val product = Product(1000, DiscountType.QUANTITY, 2)
         val calculator = DiscountCalculator()
         val value = calculator.applyDiscount(product)
@@ -58,7 +61,7 @@ internal class DiscountCalculatorTest {
     }
 
     @Test
-    fun `quantity discount test3`() {
+    fun `quantity discount test3`() = runBlocking{
         val product = Product(1000, DiscountType.QUANTITY, 5)
         val calculator = DiscountCalculator()
         val value = calculator.applyDiscount(product)
