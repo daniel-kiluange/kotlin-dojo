@@ -15,7 +15,9 @@ import kotlin.coroutines.coroutineContext
 
 class DiscountCalculator : DiscountUseCase {
     override suspend fun applyDiscount(product: Product): BigDecimal {
+        println(Thread.currentThread().name)
         val total = withContext(Dispatchers.Default) {
+            println(Thread.currentThread().name)
             async {
                 when (product.discountType) {
                     QUANTITY -> QuantityDiscountStrategy
@@ -24,7 +26,8 @@ class DiscountCalculator : DiscountUseCase {
             }
         }
 
-        return withContext(coroutineContext){
+        return withContext(coroutineContext) {
+            println(Thread.currentThread().name)
             BigDecimal.valueOf(total.await()).divide(BigDecimal.valueOf(100L))
                 .setScale(2, RoundingMode.HALF_UP)
         }
