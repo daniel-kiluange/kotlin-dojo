@@ -1,7 +1,7 @@
 package service
 
-import DiscountType.FLAT_PERCENT
-import DiscountType.QUANTITY
+import data.DiscountType.FLAT_PERCENT
+import data.DiscountType.QUANTITY
 import data.Product
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

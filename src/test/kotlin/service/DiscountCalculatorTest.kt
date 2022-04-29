@@ -1,10 +1,8 @@
 package service
 
-import DiscountType
+import data.DiscountType
 import data.Product
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
